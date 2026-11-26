@@ -718,6 +718,7 @@ public class CustomPlaybackOverlayFragment extends Fragment implements LiveTvGui
 
         binding.topPanel.startAnimation(slideDown);
         mIsVisible = true;
+        binding.songOverlay.setOsdVisible(true);
         binding.skipOverlay.setSkipUiEnabled(!mIsVisible && !mGuideVisible && !mPopupPanelVisible);
     }
 
@@ -727,6 +728,7 @@ public class CustomPlaybackOverlayFragment extends Fragment implements LiveTvGui
 
         mIsVisible = false;
         binding.topPanel.startAnimation(fadeOut);
+        binding.songOverlay.setOsdVisible(false);
         binding.skipOverlay.setSkipUiEnabled(!mIsVisible && !mGuideVisible && !mPopupPanelVisible);
     }
 
@@ -1216,6 +1218,7 @@ public class CustomPlaybackOverlayFragment extends Fragment implements LiveTvGui
 
     public void setCurrentTime(long time) {
         binding.skipOverlay.setCurrentPositionMs(time);
+        binding.songOverlay.setPlayback(playbackControllerContainer.getValue().getPlaybackController(), time);
         if (leanbackOverlayFragment != null)
             leanbackOverlayFragment.updateCurrentPosition();
     }

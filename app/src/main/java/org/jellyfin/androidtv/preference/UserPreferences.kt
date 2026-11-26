@@ -192,6 +192,11 @@ class UserPreferences(context: Context) : SharedPreferenceStore(
 		var debuggingEnabled = booleanPreference("pref_enable_debug", false)
 
 		/**
+		 * Show data from the More Metadata server plugin.
+		 */
+		var moreMetadataEnabled = booleanPreference("more_metadata_enabled", false)
+
+		/**
 		 * Use playback rewrite module for video
 		 */
 		var playbackRewriteVideoEnabled = booleanPreference("playback_new", false)

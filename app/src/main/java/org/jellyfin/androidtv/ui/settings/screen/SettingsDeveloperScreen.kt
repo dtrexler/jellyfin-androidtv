@@ -74,6 +74,16 @@ fun SettingsDeveloperScreen() {
 		}
 
 		item {
+			var moreMetadataEnabled by rememberPreference(userPreferences, UserPreferences.moreMetadataEnabled)
+			ListButton(
+				headingContent = { Text(stringResource(R.string.preference_enable_more_metadata)) },
+				trailingContent = { Checkbox(checked = moreMetadataEnabled) },
+				onClick = { moreMetadataEnabled = !moreMetadataEnabled },
+				modifier = Modifier.focusKey("more_metadata_enabled")
+			)
+		}
+
+		item {
 			// Image cache
 			val imageLoader = koinInject<ImageLoader>()
 			var imageCacheSize by remember { mutableLongStateOf(imageLoader.diskCache?.size ?: 0L) }

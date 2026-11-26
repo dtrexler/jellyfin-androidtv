@@ -40,6 +40,14 @@
 
     </FrameLayout>
 
+    <org.jellyfin.androidtv.ui.playback.moremetadata.SongOverlayView
+        android:id="@+id/song_overlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginHorizontal="48dp"
+        android:layout_marginBottom="170dp" />
+
     <FrameLayout
         android:id="@+id/popupArea"
         android:layout_width="fill_parent"
